@@ -1,0 +1,198 @@
+
+body
+{
+align-content: center;
+font-family: 'Josefin Sans', sans-serif;
+}
+/* Style the navbar */
+#navbar {
+text-align: right;
+  overflow: hidden;
+  background-color: #333;
+  font-size: 200%;
+}
+
+/* Navbar links */
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+.active, .btn:hover {
+  background-color: #FF6347 ;
+  color: white;
+}
+
+/* Page content */
+.content {
+  padding: 16px;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+opacity: 90%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+}
+
+.mySlides
+{
+margin: 2%;
+width: 90%;
+height: 40%;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#login
+{
+padding:1%;
+text-align: right;
+}
+
+#modal-login {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  font-size: 20px;
+  background-color: #E6E6FA;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+button{
+border: 2%;
+padding: 0.5% 2%;
+background-color:#FF6347;
+border: none;
+color: #ffffff;
+font-size: 20px;
+border-top-left-radius: 50px;
+border-bottom-left-radius: 50px;
+border-top-right-radius: 50px;
+border-bottom-right-radius: 50px;
+}
+
+input[type=text]{
+width: 80%;
+padding: 1%;
+border: 1px solid #C0C0C0;
+background-color: "white";
+color: "black";
+font-size: 20px;
+border-radius: 2%;
+}
+
+input[type=password]{
+width: 80%;
+padding: 1%;
+border: 1px solid #C0C0C0;
+background-color: "white";
+color: "black";
+font-size: 20px;
+border-radius: 2%;
+}
+
+button:hover{
+background-color:#FF4500;
+cursor:pointer;
+transform: scale(1.1);
+
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 70px;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.card
+{
+background-color: white;
+width: 95%;
+min-width: 100px;
+padding:1%;
+text-align: center;
+border-bottom: 2px solid tomato;
+border-top: 2px solid tomato;
+margin: 1%;
+}
+#place-holder
+{
+display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  min-width: 500px;
+background-color: navajowhite;
+text-align:center;
+padding: 1%;
+}
+h3
+{
+font-size: 30px;
+}
+p
+{
+font-size: 20px;
+}
+.comment
+{
+padding: 1%;
+font-size: 20px;
+}
+.card a
+{
+text-decoration: none;
+color: orangered;
+}
+
+.card a:hover
+{
+color: red;
+}
+
+.card img
+{
+width: 50%;
+display:block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid white;
+  border-radius: 2%;
+ box-shadow: 0 0.4px 0.8px 0 rgba(0, 0, 0, 0.2), 0 0.6px 2px 0 rgba(0, 0, 0, 0.19);
+}
+
+

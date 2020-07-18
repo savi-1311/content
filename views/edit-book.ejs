@@ -1,0 +1,9 @@
+<h1>Title: <%= book.title%></h1>
+<h2>Author: <%= book.author%></h2>
+<form method="post" action='/book-reviews-admin/edit-book/:<%= book.title%>' id="form1">
+    <label><p>Enter the Sentences separated by a line break:</p><br>
+    <textarea rows="5" name= "content" placeholder= <%= book.content%> form = "form1"></textarea>
+    </label><br>
+    <button type="submit"><b>SAVE</b></button>
+    <br>
+    </form>

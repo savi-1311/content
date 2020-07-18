@@ -1,0 +1,12 @@
+<div id="place-holder">
+<%for(var i=0;i< bookreview.length;i++){%>
+<div class="card">
+<h3>Title: <%=bookreview[i].title%></h3>
+<h5>Author: <%=bookreview[i].author%></h5>
+<p>Content: <%= bookreview[i].content%></p>
+<button><a href='/book-reviews-admin/remove-book/:<%= bookreview[i].title %>'>Delete</a></button>
+<button><a href='/book-reviews-admin/edit-book/:<%= bookreview[i].title %>'>Edit</a></button>
+</div>
+<br><br>
+<%}%>
+</div>

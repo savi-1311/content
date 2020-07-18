@@ -1,0 +1,11 @@
+<div id="place-holder">
+<%for(var i=0;i< creative.length;i++){%>
+<div class="card">
+<h3>Title: <%=creative[i].title%></h3>
+<p>Content: <%= creative[i].content%></p>
+<button><a href='/creative-writing-admin/remove-creative/:<%= creative[i].title %>'>Delete</a></button>
+<button><a href='/creative-writing-admin/edit-creative/:<%= creative[i].title %>'>Edit</a></button>
+</div>
+<br><br>
+<%}%>
+</div>

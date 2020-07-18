@@ -1,0 +1,8 @@
+<h1>Title: <%= blog.title%></h1>
+<form method="post" action='/blog-admin/edit-blog/:<%= blog.title%>' id="form1">
+    <label><p>Enter the Sentences separated by a line break:</p><br>
+    <textarea rows="5" name= "content" placeholder= <%= blog.content%> form = "form1"></textarea>
+    </label><br>
+    <button type="submit"><b>SAVE</b></button>
+    <br>
+    </form>
