@@ -3,6 +3,7 @@ body
 {
 align-content: center;
 font-family: 'Josefin Sans', sans-serif;
+background-color: lightcyan;
 }
 /* Style the navbar */
 #navbar {
@@ -193,6 +194,88 @@ display:block;
   border: 2px solid white;
   border-radius: 2%;
  box-shadow: 0 0.4px 0.8px 0 rgba(0, 0, 0, 0.2), 0 0.6px 2px 0 rgba(0, 0, 0, 0.19);
+}
+
+.lower-bar
+{
+align-items: center;
+padding: 1%;
+margin: 1%;
+display: flex;
+flex-direction: row; 
+font-size: 15px;
+}
+.lower-card
+{
+padding: 1%;
+margin: 1%;
+display: flex;
+flex-direction: column; 
+font-size: 15px;
+text-align: center;
+text-decoration: bold;
+}
+
+.lower-card .comment
+{
+ padding: 1%;
+ margin: 1%;
+ line-height: 150%;
+}
+.lower-heading
+{
+font-size: 30px;
+color: orangered;
+}
+.lower-card img
+{
+margin: 1%;
+width: 350px;
+border: 2px solid black;
+}
+
+.lower-card a
+{
+text-decoration: none;
+color: orangered;
+}
+
+.lower-card a:hover
+{
+color: red;
+}
+.contact
+{
+background-image: radial-gradient(white,lightsalmon);
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+margin: 1%;
+padding: 1%;
+text-align:center;
+align-items:center;
+}
+
+.contact h1
+{
+font-family: "Sofia";
+color: orangered;
+font-size: 50px;
+}
+
+.contact-content
+{
+padding: 1%;
+text-align: center;
+}
+
+.contact-content p
+{
+font-size: 20px;
+}
+
+.contact-content b
+{
+color: orangered;
+font-size: 20px;
 }
 
 
