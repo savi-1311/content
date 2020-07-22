@@ -30,7 +30,7 @@ Admin Login
 <a class="btn" href = "/creative-writing">Creative Writing</a>
 <a class="btn" href = "/book-reviews">Book Reviews</a>
 <a class="btn" href = "/blog">Blog</a>
-<a class="btn">Contact Us</a>
+<a class="btn" href = "#contact">Contact Us</a>
 </div>
 
 <img class="mySlides" src="/images/slide1.jpg">
@@ -90,7 +90,7 @@ Quality is the name of the game in SEO, something we know a lot about here. The 
 <a href= "/book-reviews">Read More</a>
 </div>
 </div>
-<div class= "contact" data-aos="zoom-in" data-aos-once="true" data-aos-anchor=".lower-bar">
+<div id="contact" class= "contact" data-aos="zoom-in" data-aos-once="true" data-aos-anchor= ".lower-bar">
 <div class ="contact-header">
 <h1>Contact Us</h1>
 <h3>We would love to hear from you. Find us at-</h3>
@@ -100,6 +100,35 @@ Quality is the name of the game in SEO, something we know a lot about here. The 
 <div class= "contact-heading"><b>Phone:  </b>+91 96190-32791</div><br><hr>
 <div class= "contact-heading"><b>Email:  </b>brandwitty@gmail.com</div><br><hr>
 <div class= "contact-heading"><b>Website:  </b>brandwitty.com</div><br><hr>
+<button onclick="openFormC()">Send an Email</button>
+</div>
+</div>
+
+<div id="modal-contact">
+<div class= "modal-content">
+<span class="close" onclick="closeFormC()">&times;</span>
+<form method="post" action="/contact" id="contact-form">
+
+            <label><B>Name:</B>
+            <input type="text" name="name" placeholder="Enter Name" required>
+            </label><br><br>
+
+
+			
+	    <label><B>Email:</B>
+            <input type="email" name="email" placeholder="Enter Email" required>
+            </label><br><br>
+            
+            <label><B>Phone Number:</B>
+            <input type="number" name="phone" placeholder="Enter Phone Number" required>
+            </label><br><br>
+       	    <label><B>Message:</B>
+            <input type="text" name="comment" placeholder="Enter Message" required>
+            </label><br><br>
+			
+            <button type="submit"><b>Submit</b></button> 
+		
+</form>
 </div>
 </div>
 
@@ -116,7 +145,5 @@ $(function(){
 </script>
 
 <script>
-AOS.init({
-  duration: 1200,
-})
+AOS.init();
 </script>

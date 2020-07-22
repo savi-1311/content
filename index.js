@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const expressLayouts = require("express-ejs-layouts");
 const mongoose = require('mongoose');
+const nodemailer = require("nodemailer")
 
 mongoose.connect('mongodb+srv://savi:sham1311BHAVI@cluster0-46c53.mongodb.net/test?retryWrites=true&w=majority', {
   useNewUrlParser: true

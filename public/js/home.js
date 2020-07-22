@@ -64,4 +64,16 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+// When the user clicks the button, open the modal 
+function openFormC() {
+	var modal = document.getElementById("modal-contact");
+	console.log("*");
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+function closeFormC() {
+	var modal = document.getElementById("modal-contact");
+  modal.style.display = "none";
+}
 

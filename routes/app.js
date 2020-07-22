@@ -2,7 +2,17 @@ const express = require('express');
 const creativeModel = require('../models/creativemodel.js');
 const blogModel = require('../models/blogmodel.js');
 const bookreviewModel = require('../models/bookreviewmodel.js');
+const nodemailer = require("nodemailer")
 const app = express();
+
+
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+      user: 'shambhavishandilya01',
+      pass: 'ash7599WINI'
+  }
+});
 
 let admin
 
@@ -383,5 +393,34 @@ else
 	res.status(500).send("yo");
 }
 });
+
+
+app.post('/contact',(req,res) =>
+{
+	const request = {
+        "email": req.body.email,
+        "phone": req.body.phone,
+        "name": req.body.name,
+        "comment": req.body.comment
+    };
+	
+	  const mailOptions = {
+      from: 'shambhavishandilya01@gmail.com',
+      to: 'imt_2019089@iiitm.ac.in',
+      subject: 'Request From ' +request.name,
+      text: 'Name: '+request.name+'\n'+'Email: '+request.email+'\n'+'Phone Number: '+request.phone+'\n'+'Comment: '+request.comment+'\n'
+    }
+
+    transporter.sendMail(mailOptions, function(error, info){
+      if (error) {
+        console.log(error);
+      } else {
+		  res.render("home");
+	  }
+  });
+
+        
+}
+);
 
 module.exports = app;
