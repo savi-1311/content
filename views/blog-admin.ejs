@@ -2,7 +2,7 @@
 <%for(var i=0;i< blog.length;i++){%>
 <div class="card">
 <h3>Title: <%=blog[i].title%></h3>
-<p>Content: <%= blog[i].content%></p>
+<p>Content: <%- blog[i].content%></p>
 <button><a href='/blog-admin/remove-blog/:<%= blog[i].title %>'>Delete</a></button>
 <button><a href='/blog-admin/edit-blog/:<%= blog[i].title %>'>Edit</a></button>
 </div>

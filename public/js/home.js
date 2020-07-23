@@ -77,3 +77,29 @@ function closeFormC() {
   modal.style.display = "none";
 }
 
+function openblog() {
+	var aes = document.getElementById("blog-form");
+  if (aes.style.display === "none") {
+    aes.style.display = "block";
+  } else {
+    aes.style.display = "none";
+  }
+}
+
+function openbook() {
+	var aes = document.getElementById("book-form");
+  if (aes.style.display === "none") {
+    aes.style.display = "block";
+  } else {
+    aes.style.display = "none";
+  }
+}
+function opencreative() {
+	var aes = document.getElementById("creative-form");
+  if (aes.style.display === "none") {
+    aes.style.display = "block";
+  } else {
+    aes.style.display = "none";
+  }
+}
+

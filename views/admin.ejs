@@ -1,16 +1,16 @@
-<p>Admin khul gya!</p>
-<br>
-<br>
-<br>
-
-<div id="top-bar">
-<a href = "/home">Home</a><br>
-<a href = "/creative-writing-admin">Creative Writing</a><br>
-<a href = "/book-reviews-admin">Book Reviews</a><br>
-<a href = "/blog-admin">Blog</a><br>
+<link rel="stylesheet" href="/css/home.css">
+<script src="/js/home.js"></script>
+<div id = "navbar">
+<a class="btn" href = "/home">Home</a>
+<a class="btn" href = "/creative-writing-admin">Creative Writing</a>
+<a class="btn" href = "/book-reviews-admin">Book Reviews</a>
+<a class="btn" href = "/blog-admin">Blog</a>
+<a class="btn">Contact Us</a>
 </div>
-<h1>Blog</h1>
-<form method="post" action="admin/add-blog" id="login1">
+<br><br>
+<div class= "container">
+<button class="collapse" onclick="openblog()">Add Blog</button><br><br>
+<form method="post" action="admin/add-blog" id="blog-form">
 
             <label><B>Title:</B>
             <input type="text" name="title" placeholder="Enter the Title" required>
@@ -18,37 +18,29 @@
 
 
 			
-	    <label><B>Blog:</B>
-            <input type="text" name="content" placeholder="Begin Typing..." required>
-            </label><br><br>
+	    <label><B>Blog:</B><br><br>
+	  <textarea class="content" name="content"></textarea>
+	  <br><br></label>
 			
-            <button type="submit"><b>Login</b></button> 
-		
-        </div>
+            <button type="submit"><b>Save</b></button> 
 </form>
 <br>
 <br>
-<h1>Creative Writing</h1>
-<form method="post" action="admin/add-creative" id="login2">
+<button class="collapse" onclick="opencreative()">Add Creative Writing</button><br><br>
+<form method="post" action="admin/add-creative" id="creative-form">
 
             <label><B>Title:</B>
             <input type="text" name="title" placeholder="Enter the Title" required>
             </label><br><br>
-
-
-			
-	    <label><B>Blog:</B>
-            <input type="text" name="content" placeholder="Begin Typing..." required>
-            </label><br><br>
-			
-            <button type="submit"><b>Login</b></button> 
-		
-        </div>
+      <label><B>Content:</B> <br><br></label>
+	  <textarea class="content" name="content"></textarea>
+	  <br><br>
+      <button type="submit"><b>Save</b></button> 
 </form>
 <br>
 <br>
-<h1>Book Review</h1>
-<form method="post" action="admin/add-book-review" id="login3">
+<button class="collapse" onclick="openbook()">Add Book Review</button><br><br>
+<form method="post" action="admin/add-book-review" id="book-form">
 
             <label><B>Title:</B>
             <input type="text" name="title" placeholder="Enter the Title" required>
@@ -60,11 +52,19 @@
 
 
 			
-	    <label><B>Blog:</B>
-            <input type="text" name="content" placeholder="Begin Typing..." required>
-            </label><br><br>
+	    <label><B>Review:</B><br><br></label>
+	  <textarea class="content" name="content"></textarea>
+	  <br><br>
 			
-            <button type="submit"><b>Login</b></button> 
+            <button type="submit"><b>Save</b></button> 
 		
-        </div>
 </form>
+</div>
+
+<script>
+	$('.content').richText();
+	</script>
+	<link rel="stylesheet" href="/richtext.min.css">
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="/jquery.richtext.js"></script>
+<script src="/jquery.richtext.min.js"></script>

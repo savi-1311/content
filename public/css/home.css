@@ -312,4 +312,48 @@ color: orangered;
 font-size: 20px;
 }
 
+.collapse {
+  background-color: tomato;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 30px;
+}
 
+.collapse:hover {
+transform: scale(1);
+  background-color: orangered;
+  
+}
+
+.collapse:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 30px;
+  color: white;
+  float: right;
+  margin-left: 5px;
+}
+
+#blog-form
+{
+display:none;
+}
+
+#book-form
+{
+display:none;
+}
+
+#creative-form
+{
+display:none;
+}
+
+.container{
+align-items: center;
+padding: 1%;
+}
