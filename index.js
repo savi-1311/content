@@ -5,10 +5,20 @@ const session = require('express-session');
 const expressLayouts = require("express-ejs-layouts");
 const mongoose = require('mongoose');
 const nodemailer = require("nodemailer")
+const {MONGOURI} = require('./keys')
+const {GMAIL_PASS} = require('./keys')
 
-mongoose.connect('mongodb+srv://savi:sham1311BHAVI@cluster0-46c53.mongodb.net/test?retryWrites=true&w=majority', {
-  useNewUrlParser: true
-});
+
+mongoose.connect(MONGOURI,{
+    useNewUrlParser:true,
+    useUnifiedTopology:true
+})
+mongoose.connection.on('connected',()=>{
+    console.log("Connected DATABASE")
+})
+mongoose.connection.on('error',(err)=>{
+    console.log("err connecting",err)
+})
 
 
 app.use(bodyParser.json());

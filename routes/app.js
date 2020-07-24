@@ -4,13 +4,14 @@ const blogModel = require('../models/blogmodel.js');
 const bookreviewModel = require('../models/bookreviewmodel.js');
 const nodemailer = require("nodemailer")
 const app = express();
+const {GMAIL_PASS} = require('../keys')
 
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
       user: 'shambhavishandilya01',
-      pass: 'ash7599WINI'
+      pass: GMAIL_PASS
   }
 });
 
