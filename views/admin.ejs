@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="/css/home.css">
 <script src="/js/home.js"></script>
 <div id = "navbar">
-<a class="btn" href = "/home">Home</a>
+<a class="btn active" href = "/home">Home</a>
 <a class="btn" href = "/creative-writing-admin">Creative Writing</a>
 <a class="btn" href = "/book-reviews-admin">Book Reviews</a>
 <a class="btn" href = "/blog-admin">Blog</a>
@@ -19,7 +19,7 @@
 
 			
 	    <label><B>Blog:</B><br><br>
-	  <textarea class="content" name="content"></textarea>
+	  <textarea id="content1" name="content" form = "blog-form"></textarea>
 	  <br><br></label>
 			
             <button type="submit"><b>Save</b></button> 
@@ -33,7 +33,7 @@
             <input type="text" name="title" placeholder="Enter the Title" required>
             </label><br><br>
       <label><B>Content:</B> <br><br></label>
-	  <textarea class="content" name="content"></textarea>
+	  <textarea id="content2" name="content" form="creative-form"></textarea>
 	  <br><br>
       <button type="submit"><b>Save</b></button> 
 </form>
@@ -53,7 +53,7 @@
 
 			
 	    <label><B>Review:</B><br><br></label>
-	  <textarea class="content" name="content"></textarea>
+	  <textarea id="content3" name="content" form="book-form"></textarea>
 	  <br><br>
 			
             <button type="submit"><b>Save</b></button> 
@@ -62,7 +62,9 @@
 </div>
 
 <script>
-	$('.content').richText();
+	$('#content1').richText();
+	$('#content2').richText();
+	$('#content3').richText();
 	</script>
 	<link rel="stylesheet" href="/richtext.min.css">
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>

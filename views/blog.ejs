@@ -5,12 +5,14 @@
 <a class="btn" href = "/creative-writing">Creative Writing</a>
 <a class="btn" href = "/book-reviews">Book Reviews</a>
 <a class="btn active" href = "/blog">Blog</a>
-<a class="btn">Contact Us</a>
+<a class="btn" href = "#contact">Contact Us</a>
 </div>
+
+<% if (msg == 0) { %>
 <div id="place-holder">
 <%for(var i=0;i< blog.length;i++){%>
 <div class="card">
-<h3><%=blog[i].title%></h3>
+<a href= "/blog/:<%=blog[i].title%>"><h2><%=blog[i].title%></h2></a>
 <img src="/images/blog.jpg"></img>
 <div class = "comment">
 <p><%- blog[i].content%></p>
@@ -19,6 +21,60 @@
 </div>
 <br><br>
 <%}%>
+</div>
+<%} else { %>
+<div id="place-holder">
+<div class="card">
+<h2><%=blog.title%></h2>
+<img src="/images/blog.jpg"></img>
+<p><%- blog.content%></p>
+<br><br>
+<button><a href= "/blog" style = "text-decoration: none;">Explore More</a></button>
+</div>
+<br><br>
+</div>
+<% } %>
+
+<div id="contact" class= "contact" data-aos="zoom-in" data-aos-once="true" data-aos-anchor= ".lower-bar">
+<div class ="contact-header">
+<h1>Contact Us</h1>
+<h3>We would love to hear from you. Find us at-</h3>
+</div>
+<div class = "contact-content">
+<div class= "contact-heading"><b>Address:  </b> 2, A-1, Krishna Nagar 1, Near Hotel Rajmahal, Chandavarkar Road Near Borivali Railway Station, Borivali West, Mumbai, 400092</div><br><hr>
+<div class= "contact-heading"><b>Phone:  </b>+91 96190-32791</div><br><hr>
+<div class= "contact-heading"><b>Email:  </b>brandwitty@gmail.com</div><br><hr>
+<div class= "contact-heading"><b>Website:  </b>brandwitty.com</div><br><hr>
+<button onclick="openFormC()">Send an Email</button>
+</div>
+</div>
+
+<div id="modal-contact">
+<div class= "modal-content">
+<span class="close" onclick="closeFormC()">&times;</span>
+<form method="post" action="/contact" id="contact-form">
+
+            <label><B>Name:</B>
+            <input type="text" name="name" placeholder="Enter Name" required>
+            </label><br><br>
+
+
+			
+	    <label><B>Email:</B>
+            <input type="email" name="email" placeholder="Enter Email" required>
+            </label><br><br>
+            
+            <label><B>Phone Number:</B>
+            <input type="number" name="phone" placeholder="Enter Phone Number" required>
+            </label><br><br>
+       	    <label><B>Message:</B>
+            <input type="text" name="comment" placeholder="Enter Message" required>
+            </label><br><br>
+			
+            <button type="submit"><b>Submit</b></button> 
+		
+</form>
+</div>
 </div>
 
 
@@ -32,4 +88,8 @@ $(function(){
     }
   });
 });
+</script>
+
+<script>
+AOS.init();
 </script>

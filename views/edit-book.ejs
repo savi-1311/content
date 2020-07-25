@@ -1,9 +1,20 @@
+<link rel="stylesheet" href="/css/home.css">
+<script src="/js/home.js"></script>
+
 <h1>Title: <%= book.title%></h1>
 <h2>Author: <%= book.author%></h2>
 <form method="post" action='/book-reviews-admin/edit-book/:<%= book.title%>' id="form1">
-    <label><p>Enter the Sentences separated by a line break:</p><br>
-    <textarea rows="5" name= "content" placeholder= <%= book.content%> form = "form1"></textarea>
-    </label><br>
+    <label><p>Enter the Sentences separated by a line break:</p><br></label>
+        <textarea class="content" name="content" form="form1"><%- book.content%></textarea>
+        <br><br>
     <button type="submit"><b>SAVE</b></button>
     <br>
     </form>
+
+<script>
+	$('.content').richText();
+	</script>
+	<link rel="stylesheet" href="/richtext.min.css">
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="/jquery.richtext.js"></script>
+<script src="/jquery.richtext.min.js"></script>

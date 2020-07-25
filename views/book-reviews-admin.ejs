@@ -1,11 +1,22 @@
+<link rel="stylesheet" href="/css/home.css">
+<script src="/js/home.js"></script>
+<div id = "navbar">
+<a class="btn" href = "/admin">Admin</a>
+<a class="btn" href = "/creative-writing-admin">Creative Writing</a>
+<a class="btn active" href = '/book-reviews-admin'>Book Reviews</a>
+<a class="btn" href = "/blog-admin">Blog</a>
+<a class="btn">Contact Us</a>
+</div>
 <div id="place-holder">
 <%for(var i=0;i< bookreview.length;i++){%>
 <div class="card">
-<h3>Title: <%=bookreview[i].title%></h3>
-<h5>Author: <%=bookreview[i].author%></h5>
-<p>Content: <%= bookreview[i].content%></p>
-<button><a href='/book-reviews-admin/remove-book/:<%= bookreview[i].title %>'>Delete</a></button>
-<button><a href='/book-reviews-admin/edit-book/:<%= bookreview[i].title %>'>Edit</a></button>
+<h2>Title: <%=bookreview[i].title%></h2>
+<h2>Author: <%=bookreview[i].author%></h2>
+<div class = "comment">
+<p>Content: <%- bookreview[i].content%></p>
+</div>
+<button><a href='/book-reviews-admin/remove-book/:<%= bookreview[i].title %>' style="color: white;">Delete</a></button>
+<button><a href='/book-reviews-admin/edit-book/:<%= bookreview[i].title %>' style="color: white;">Edit</a></button>
 </div>
 <br><br>
 <%}%>

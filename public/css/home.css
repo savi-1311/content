@@ -31,6 +31,7 @@ text-align: right;
 /* Page content */
 .content {
   padding: 16px;
+  height: 80%;
 }
 
 /* The sticky class is added to the navbar with JS when it reaches its scroll position */
@@ -175,14 +176,19 @@ transform: scale(1.1);
 
 .card
 {
+ font-family: 'Allerta';
+display:block;
 background-color: white;
-width: 95%;
+width: 94%;
 min-width: 100px;
-padding:1%;
-text-align: center;
+padding:2%;
+text-align: justify;
 border-bottom: 2px solid tomato;
 border-top: 2px solid tomato;
 margin: 1%;
+letter-spacing: 0.01em;
+font-size: 20px;
+line-height: 1.6;
 }
 #place-holder
 {
@@ -191,9 +197,11 @@ display: block;
   margin-right: auto;
   width: 60%;
   min-width: 500px;
-background-color: navajowhite;
-text-align:center;
+background-color: gray;
 padding: 1%;
+align-items: center;
+align-content: center;
+text-align:center;
 }
 h3
 {
@@ -207,6 +215,8 @@ font-size: 20px;
 {
 padding: 1%;
 font-size: 20px;
+letter-spacing: 0.01em;
+line-height: 1.6;
 }
 .card a
 {
@@ -221,13 +231,14 @@ color: red;
 
 .card img
 {
-width: 50%;
+width: 80%;
+margin: 1%;
 display:block;
-  margin-left: auto;
-  margin-right: auto;
-  border: 2px solid white;
-  border-radius: 2%;
- box-shadow: 0 0.4px 0.8px 0 rgba(0, 0, 0, 0.2), 0 0.6px 2px 0 rgba(0, 0, 0, 0.19);
+margin-left: auto;
+margin-right: auto;
+border: 2px solid white;
+border-radius: 2%;
+box-shadow: 0 0.4px 0.8px 0 rgba(0, 0, 0, 0.2), 0 0.6px 2px 0 rgba(0, 0, 0, 0.19);
 }
 
 .lower-bar
@@ -356,4 +367,19 @@ display:none;
 .container{
 align-items: center;
 padding: 1%;
+}
+
+button a{
+color: white;
+}
+
+h2 {
+text-align: center;
+font-size: 40px;
+color: orangered;
+}
+
+#place-holder a
+{
+text-decoration: none;
 }

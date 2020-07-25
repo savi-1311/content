@@ -3,7 +3,7 @@
 
 <h1>Title: <%= blog.title%></h1>
 <form method="post" action='/blog-admin/edit-blog/:<%= blog.title%>' id="form1">
-    <textarea class="content" name="content"><%- blog.content%></textarea>
+    <textarea class="content" name="content" form="form1"><%- blog.content%></textarea>
 	  <br><br>
     </label><br>
     <button type="submit"><b>SAVE</b></button>

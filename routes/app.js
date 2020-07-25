@@ -42,30 +42,73 @@ app.get('/blog', async (req, res) => {
   const blog = await blogModel.find({});
 
   try {
-    res.render('blog',{blog:blog});
+    res.render('blog',{blog:blog,msg:0});
   } catch (err) {
     res.status(500).send(err);
   }
+});
+
+app.get('/blog/:title', (req, res) => {
+	
+		var rem = req.params.title;
+		rem = rem.substring(1);
+		blogModel.findOne({'title':rem},
+  function(err,data)
+  {
+	  if(!err)
+	  { 
+	  res.render('blog',{blog:data,msg:1});
+	  }
+	  else
+	  {
+		res.send(err);  
+	  }});
 });
 
 app.get('/creative-writing', async (req, res) => {
   const creative = await creativeModel.find({});
 
   try {
-    res.render('creative-writing',{creative:creative});
+    res.render('creative-writing',{creative:creative,msg:0});
   } catch (err) {
     res.status(500).send(err);
   }
+});
+
+app.get('/creative-writing/:title', (req, res) => {
+	
+		var rem = req.params.title;
+		rem = rem.substring(1);
+		creativeModel.findOne({'title':rem},
+  function(err,data)
+  {
+	  if(!err)
+	  { 
+	  res.render('creative-writing',{creative:data,msg:1});
+	  }});
 });
 
 app.get('/book-reviews', async (req, res) => {
   const bookreview = await bookreviewModel.find({});
 
   try {
-    res.render('book-reviews',{bookreview:bookreview});
+    res.render('book-reviews',{bookreview:bookreview,msg:0});
   } catch (err) {
     res.status(500).send(err);
   }
+});
+
+app.get('/book-reviews/:title', (req, res) => {
+	
+		var rem = req.params.title;
+		rem = rem.substring(1);
+		bookreviewModel.findOne({'title':rem},
+  function(err,data)
+  {
+	  if(!err)
+	  { 
+	  res.render('book-reviews',{book:data,msg:1});
+	  }});
 });
 
 app.get('/blog-admin', async (req, res) => {
@@ -378,13 +421,14 @@ app.post('/book-reviews-admin/edit-book/:title', (req, res) => {
 		rem = rem.substring(1);
 		console.log(rem);
 		console.log(content);
-		  creativeModel.findOneAndUpdate({ 'title':rem }, { 'content': content }, function(
+		  bookreviewModel.findOneAndUpdate({ 'title':rem }, { 'content':content }, function(
     err,
     result
   ) {
     if (err) {
       res.send(err);
     } else {
+		console.log("done!");
       res.send(result);
     }
   });

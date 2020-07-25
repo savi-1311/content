@@ -1,10 +1,95 @@
+<link rel="stylesheet" href="/css/home.css">
+<script src="/js/home.js"></script>
+<div id = "navbar">
+<a class="btn" href = "/home">Home</a>
+<a class="btn" href = "/creative-writing">Creative Writing</a>
+<a class="btn active" href = "/book-reviews">Book Reviews</a>
+<a class="btn" href = "/blog">Blog</a>
+<a class="btn" href = "#contact">Contact Us</a>
+</div>
+<% if (msg == 0) { %>
 <div id="place-holder">
 <%for(var i=0;i< bookreview.length;i++){%>
 <div class="card">
-<h3>Title: <%=bookreview[i].title%></h3>
-<h5>Author: <%=bookreview[i].author%></h5>
-<p>Content: <%- bookreview[i].content%></p>
+<a href= "/blog/:<%=bookreview[i].title%>"><h2><%=bookreview[i].title%></h2></a>
+<h2>Author: <%=bookreview[i].author%></h2>
+<img src="/images/bookr.jpg"></img>
+<div class = "comment">
+<p><%- bookreview[i].content%></p>
+</div>
+<a href= "/book-reviews/:<%=bookreview[i].title%>">Read More</a>
 </div>
 <br><br>
 <%}%>
 </div>
+
+<%} else { %>
+<div id="place-holder">
+<div class="card">
+<h2><%=book.title%></h2>
+<img src="/images/bookr.jpg"></img>
+<p><%- book.content%></p>
+<br><br>
+<button><a href= "/book-reviews" style = "text-decoration: none;">Explore More</a></button>
+</div>
+</div>
+<% } %>
+
+<div id="contact" class= "contact" data-aos="zoom-in" data-aos-once="true" data-aos-anchor= ".lower-bar">
+<div class ="contact-header">
+<h1>Contact Us</h1>
+<h3>We would love to hear from you. Find us at-</h3>
+</div>
+<div class = "contact-content">
+<div class= "contact-heading"><b>Address:  </b> 2, A-1, Krishna Nagar 1, Near Hotel Rajmahal, Chandavarkar Road Near Borivali Railway Station, Borivali West, Mumbai, 400092</div><br><hr>
+<div class= "contact-heading"><b>Phone:  </b>+91 96190-32791</div><br><hr>
+<div class= "contact-heading"><b>Email:  </b>brandwitty@gmail.com</div><br><hr>
+<div class= "contact-heading"><b>Website:  </b>brandwitty.com</div><br><hr>
+<button onclick="openFormC()">Send an Email</button>
+</div>
+</div>
+
+<div id="modal-contact">
+<div class= "modal-content">
+<span class="close" onclick="closeFormC()">&times;</span>
+<form method="post" action="/contact" id="contact-form">
+
+            <label><B>Name:</B>
+            <input type="text" name="name" placeholder="Enter Name" required>
+            </label><br><br>
+
+
+			
+	    <label><B>Email:</B>
+            <input type="email" name="email" placeholder="Enter Email" required>
+            </label><br><br>
+            
+            <label><B>Phone Number:</B>
+            <input type="number" name="phone" placeholder="Enter Phone Number" required>
+            </label><br><br>
+       	    <label><B>Message:</B>
+            <input type="text" name="comment" placeholder="Enter Message" required>
+            </label><br><br>
+			
+            <button type="submit"><b>Submit</b></button> 
+		
+</form>
+</div>
+</div>
+
+
+<script type="text/javascript">
+$(function(){
+  $(".comment").each(function(i){
+    len=$(this).text().length;
+    if(len>300)
+    {
+      $(this).text($(this).text().substr(0,300)+'…');
+    }
+  });
+});
+</script>
+
+<script>
+AOS.init();
+</script>
