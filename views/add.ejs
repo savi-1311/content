@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="/css/home.css">
+<link rel="stylesheet" href="/css/toast.css">
+<script src="/js/toast.js"></script>
+<div id="only" onload="openadd();" style="height: 100%; width: 100%;font-size:80%;text-align: center;">
+<h3>Go Back!</h3>
+</div>
+<script>
+
+window.onload = function() {
+
+Command: toastr["success"]("The Content has been added!", "Added")
+
+toastr.options = {
+  "closeButton": true,
+  "debug": false,
+  "newestOnTop": false,
+  "progressBar": false,
+  "positionClass": "toast-top-center",
+  "preventDuplicates": false,
+  "onclick": null,
+  "showDuration": "300",
+  "hideDuration": "1000",
+  "timeOut": "5000",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut"
+}
+  
+};
+</script>

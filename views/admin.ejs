@@ -1,11 +1,12 @@
 <link rel="stylesheet" href="/css/home.css">
+<link rel="stylesheet" href="/css/toast.css">
 <script src="/js/home.js"></script>
 <div id = "navbar">
 <a class="btn active" href = "/home">Home</a>
 <a class="btn" href = "/creative-writing-admin">Creative Writing</a>
 <a class="btn" href = "/book-reviews-admin">Book Reviews</a>
 <a class="btn" href = "/blog-admin">Blog</a>
-<a class="btn">Contact Us</a>
+<a class="btn" href = "/logout">Logout</a>
 </div>
 <br><br>
 <div class= "container">
@@ -22,7 +23,7 @@
 	  <textarea id="content1" name="content" form = "blog-form"></textarea>
 	  <br><br></label>
 			
-            <button type="submit"><b>Save</b></button> 
+            <button onclick="blogAdd()" type="submit"><b>Save</b></button> 
 </form>
 <br>
 <br>

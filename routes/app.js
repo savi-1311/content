@@ -30,13 +30,23 @@ app.post("/admin",(req,res) => {
     };
     if(admin.userid == "admin" && admin.password == "pass")
     {
-		req.session.user = admin
+		req.session.user = admin;
         res.status(200).render('admin',{admin:req.session.user});
 	}
 	
 	
 }
 )
+
+app.get('/logout',(req,res) => {
+    req.session.destroy((err) => {
+        if(err) {
+            return console.log(err);
+        }
+        res.redirect('/home');
+    });
+
+});
 
 app.get('/blog', async (req, res) => {
   const blog = await blogModel.find({});
@@ -143,8 +153,8 @@ app.get('/book-reviews-admin', async (req, res) => {
 
 
 
-app.post('/admin/add-blog', async (req, res) => {
-	
+app.post('/admin/add-blog', async (req,res) => {
+	admin = req.session.user;
 	if(req.session.user)
 	{
 
@@ -159,8 +169,8 @@ app.post('/admin/add-blog', async (req, res) => {
 const blog = await blogModel.find({});
 
   try {
-	  req.session.user = admin;
-    res.status(200).end();
+    res.status(200);
+    res.render("add",{s:"Blog"})
   } catch (err) {
     res.status(500).send(err);
   }
@@ -180,10 +190,10 @@ app.get('/blog-admin/remove-blog/:title', (req, res) => {
 	{
 		var rem = req.params.title;
 		rem = rem.substring(1);
-		console.log(rem);
 		blogModel.findOneAndDelete({'title':rem},
-  function(err,data){if(!err) console.log(data);});
-    res.status(200).end();
+  function(err,data){if(!err)
+	      res.status(200);
+    res.render("delete");});
 	}
 else
 {
@@ -220,8 +230,6 @@ app.post('/blog-admin/edit-blog/:title', (req, res) => {
 		var rem = req.params.title;
 		var content = req.body.content;
 		rem = rem.substring(1);
-		console.log(rem);
-		console.log(content);
 		  blogModel.findOneAndUpdate({ 'title':rem }, { 'content': content }, function(
     err,
     result
@@ -229,7 +237,7 @@ app.post('/blog-admin/edit-blog/:title', (req, res) => {
     if (err) {
       res.send(err);
     } else {
-      res.send(result);
+      res.render("edit");
     }
   });
 }
@@ -259,7 +267,8 @@ const creative = await creativeModel.find({});
 
   try {
 	  req.session.admin = admin;
-    res.status(200).end();
+    res.status(200);
+    res.render("add",{s:"Creative Writing"})
   } catch (err) {
     res.status(500).send(err);
   }
@@ -279,10 +288,11 @@ app.get('/creative-writing-admin/remove-creative/:title', (req, res) => {
 	{
 		var rem = req.params.title;
 		rem = rem.substring(1);
-		console.log(rem);
 		creativeModel.findOneAndDelete({'title':rem},
-  function(err,data){if(!err) console.log(data);});
-    res.status(200).end();
+  function(err,data){if(!err)
+    res.status(200);
+    res.render("delete");
+    });
 	}
 else
 {
@@ -296,7 +306,6 @@ app.get('/creative-writing-admin/edit-creative/:title', (req, res) => {
 	{
 		var rem = req.params.title;
 		rem = rem.substring(1);
-		console.log(rem);
 		creativeModel.findOne({'title':rem},
   function(err,data)
   {
@@ -319,8 +328,6 @@ app.post('/creative-writing-admin/edit-creative/:title', (req, res) => {
 		var rem = req.params.title;
 		var content = req.body.content;
 		rem = rem.substring(1);
-		console.log(rem);
-		console.log(content);
 		  creativeModel.findOneAndUpdate({ 'title':rem }, { 'content': content }, function(
     err,
     result
@@ -328,7 +335,7 @@ app.post('/creative-writing-admin/edit-creative/:title', (req, res) => {
     if (err) {
       res.send(err);
     } else {
-      res.send(result);
+      res.render("edit");
     }
   });
 }
@@ -359,7 +366,8 @@ const bookreview = await bookreviewModel.find({});
 
   try {
 	  req.session.admin = admin;
-    res.status(200).end();
+    res.status(200);
+    res.render("add",{s:"Book Review"})
   } catch (err) {
     res.status(500).send(err);
   }
@@ -379,10 +387,11 @@ app.get('/book-reviews-admin/remove-book/:title', (req, res) => {
 	{
 		var rem = req.params.title;
 		rem = rem.substring(1);
-		console.log(rem);
 		bookreviewModel.findOneAndDelete({'title':rem},
-  function(err,data){if(!err) console.log(data);});
-    res.status(200).end();
+  function(err,data){if(!err)
+    res.status(200);
+    res.render("delete");
+    });
 	}
 else
 {
@@ -396,7 +405,6 @@ app.get('/book-reviews-admin/edit-book/:title', (req, res) => {
 	{
 		var rem = req.params.title;
 		rem = rem.substring(1);
-		console.log(rem);
 		bookreviewModel.findOne({'title':rem},
   function(err,data)
   {
@@ -419,8 +427,6 @@ app.post('/book-reviews-admin/edit-book/:title', (req, res) => {
 		var rem = req.params.title;
 		var content = req.body.content;
 		rem = rem.substring(1);
-		console.log(rem);
-		console.log(content);
 		  bookreviewModel.findOneAndUpdate({ 'title':rem }, { 'content':content }, function(
     err,
     result
@@ -428,8 +434,7 @@ app.post('/book-reviews-admin/edit-book/:title', (req, res) => {
     if (err) {
       res.send(err);
     } else {
-		console.log("done!");
-      res.send(result);
+		res.render("edit");
     }
   });
 }

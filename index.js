@@ -26,15 +26,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(session({
   secret: 'seCReT',
-  resave: false,
-  saveUninitialized: true,
   cookie: { maxAge: 3600000 }
 }));
 
 app.use(express.static('public'));
 app.use(expressLayouts);
 app.set("view engine", "ejs");
-
 
 
 
