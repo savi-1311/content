@@ -26,7 +26,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(session({
   secret: 'seCReT',
-  cookie: { maxAge: 3600000 }
+  cookie: { maxAge: 3600000 },
+  saveUninitialized: false
 }));
 
 app.use(express.static('public'));

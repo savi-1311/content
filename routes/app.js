@@ -19,7 +19,8 @@ let admin
 
 app.get("/admin", (req, res) => {
   if (!req.session.user) {
-    res.status(401).send('login karo')
+    res.status(401);
+    res.redirect('/error');
   } else res.status(200).render("admin",{admin:req.session.user})
 });
 
@@ -45,6 +46,13 @@ app.get('/logout',(req,res) => {
         }
         res.redirect('/home');
     });
+
+});
+
+app.get('/error',(req,res) => {
+	
+	res.status(200);
+	res.render('error');
 
 });
 
@@ -180,7 +188,8 @@ const blog = await blogModel.find({});
 }
 else
 {
-	res.status(500).send("yo");
+	res.status(500);
+	res.redirect('/error');
 }
 });
 
@@ -197,7 +206,8 @@ app.get('/blog-admin/remove-blog/:title', (req, res) => {
 	}
 else
 {
-	res.status(500).send("yo");
+	res.status(500);
+	res.redirect('/error');
 }
 });
 
@@ -218,7 +228,8 @@ app.get('/blog-admin/edit-blog/:title', (req, res) => {
 	}
 else
 {
-	res.status(500).send("yo");
+	res.status(500);
+	res.redirect('/error');
 }
 });
 
@@ -243,7 +254,8 @@ app.post('/blog-admin/edit-blog/:title', (req, res) => {
 }
 else
 {
-	res.status(500).send("yo");
+	res.status(500);
+	res.redirect('/error');
 }
 });
 
@@ -278,7 +290,8 @@ const creative = await creativeModel.find({});
 }
 else
 {
-	res.status(500).send("login karo");
+	res.status(500);
+	res.redirect('/error');
 }
 });
 
@@ -296,7 +309,8 @@ app.get('/creative-writing-admin/remove-creative/:title', (req, res) => {
 	}
 else
 {
-	res.status(500).send("yo");
+	res.status(500);
+	res.redirect('/error');
 }
 });
 
@@ -316,7 +330,8 @@ app.get('/creative-writing-admin/edit-creative/:title', (req, res) => {
 	}
 else
 {
-	res.status(500).send("yo");
+	res.status(500);
+	res.redirect('/error');
 }
 });
 
@@ -341,7 +356,8 @@ app.post('/creative-writing-admin/edit-creative/:title', (req, res) => {
 }
 else
 {
-	res.status(500).send("yo");
+	res.status(500);
+	res.redirect('/error');
 }
 });
 
@@ -377,7 +393,8 @@ const bookreview = await bookreviewModel.find({});
 }
 else
 {
-	res.status(500).send("login karo");
+	res.status(500);
+	res.redirect('/error');
 }
 });
 
@@ -395,7 +412,8 @@ app.get('/book-reviews-admin/remove-book/:title', (req, res) => {
 	}
 else
 {
-	res.status(500).send("yo");
+	res.status(500);
+	res.redirect('/error');
 }
 });
 
@@ -415,7 +433,8 @@ app.get('/book-reviews-admin/edit-book/:title', (req, res) => {
 	}
 else
 {
-	res.status(500).send("yo");
+	res.status(500);
+	res.redirect('/error');
 }
 });
 
@@ -440,7 +459,8 @@ app.post('/book-reviews-admin/edit-book/:title', (req, res) => {
 }
 else
 {
-	res.status(500).send("yo");
+	res.status(500);
+	res.redirect('/error');
 }
 });
 
