@@ -5,11 +5,9 @@ const session = require('express-session');
 const expressLayouts = require("express-ejs-layouts");
 const mongoose = require('mongoose');
 const nodemailer = require("nodemailer")
-const {MONGOURI} = require('./keys')
-const {GMAIL_PASS} = require('./keys')
 
 
-mongoose.connect(MONGOURI,{
+mongoose.connect(process.env.MONGOURI,{
     useNewUrlParser:true,
     useUnifiedTopology:true
 })
