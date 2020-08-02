@@ -34,6 +34,11 @@ app.post("/admin",(req,res) => {
 		req.session.user = admin;
         res.status(200).render('admin',{admin:req.session.user});
 	}
+	else
+	{
+		res.status(500);
+		res.redirect("/error");
+	}
 	
 	
 }
