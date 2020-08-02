@@ -45,7 +45,8 @@ app.get('/home', (req, res) => {
 });
 
 app.get('*', (req, res) => {
-  res.status(404).send('404');
+  res.status(404);
+  res.redierect("/home");
 });
 
 const PORT = process.env.PORT || 4000;
