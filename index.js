@@ -6,7 +6,6 @@ const expressLayouts = require("express-ejs-layouts");
 const mongoose = require('mongoose');
 const nodemailer = require("nodemailer")
 
-
 mongoose.connect(process.env.MONGOURI,{
     useNewUrlParser:true,
     useUnifiedTopology:true

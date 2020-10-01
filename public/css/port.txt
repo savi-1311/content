@@ -1,0 +1,30 @@
+<div id="projects">
+	<div class = "card" data-aos="zoom-in" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out">
+		<img src="images/Home.png"></img>
+		<div class="text-right">
+			<a href="https://github.com/savi-1311/spotify-search"><h1>Spotify Search</h1></a>
+			<h3>A web app to search songs through Spotify API.</h3>
+			<div class="drop-down">Tech Stack</div>
+		</div>
+	</div>
+	
+	
+		<div class = "card" data-aos="zoom-in" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out">
+		<div class="text-left">
+			<h1>Fapino</h1>
+			<h3>A web app to order and rate food.</h3>
+			<div class="drop-down"></div>
+		</div>
+		<img src="images/Home.png"></img>
+	</div>
+	
+		<div class = "card" data-aos="zoom-in" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out">
+		<img src="images/landing.png"></img>
+		<div class="text-right">
+			<h1>Review Detector</h1>
+			<h3>A web app to find the sentiment of a sentence.</h3>
+			<div class="drop-down">Tech Stack</div>
+		</div>
+	</div>
+	
+</div>

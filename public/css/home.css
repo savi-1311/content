@@ -3,7 +3,11 @@ body
 {
 align-content: center;
 font-family: 'Josefin Sans', sans-serif;
-background-color: lightcyan;
+background-color: white;
+}
+
+#top img{
+width: 15%;
 }
 /* Style the navbar */
 #navbar {
@@ -11,6 +15,12 @@ text-align: right;
   overflow: hidden;
   background-color: #333;
   font-size: 200%;
+}
+
+@media screen and (max-width: 800px) {
+  #navbar{
+    font-size:80%;
+  }
 }
 
 /* Navbar links */
@@ -107,7 +117,7 @@ padding: 0.5% 2%;
 background-color:#FF6347;
 border: none;
 color: #ffffff;
-font-size: 20px;
+font-size: 100%;
 border-top-left-radius: 50px;
 border-bottom-left-radius: 50px;
 border-top-right-radius: 50px;
@@ -180,14 +190,14 @@ transform: scale(1.1);
 display:block;
 background-color: white;
 width: 94%;
-min-width: 100px;
+min-width: 80px;
 padding:2%;
 text-align: justify;
 border-bottom: 2px solid tomato;
 border-top: 2px solid tomato;
 margin: 1%;
 letter-spacing: 0.01em;
-font-size: 20px;
+font-size: 100%;
 line-height: 1.6;
 }
 #place-holder
@@ -196,7 +206,7 @@ display: block;
   margin-left: auto;
   margin-right: auto;
   width: 60%;
-  min-width: 500px;
+  min-width: 400px;
 background-color: gray;
 padding: 1%;
 align-items: center;
@@ -205,16 +215,16 @@ text-align:center;
 }
 h3
 {
-font-size: 30px;
+font-size: 150%;
 }
 p
 {
-font-size: 20px;
+font-size: 100%;
 }
 .comment
 {
 padding: 1%;
-font-size: 20px;
+font-size: 100%;
 letter-spacing: 0.01em;
 line-height: 1.6;
 }
@@ -243,12 +253,14 @@ box-shadow: 0 0.4px 0.8px 0 rgba(0, 0, 0, 0.2), 0 0.6px 2px 0 rgba(0, 0, 0, 0.19
 
 .lower-bar
 {
-align-items: center;
+width: 100;
 padding: 1%;
 margin: 1%;
 display: flex;
-flex-direction: row; 
+flex-direction: row;
+flex-flow: row wrap;
 font-size: 15px;
+justify-content: space-around;
 }
 .lower-card
 {
@@ -256,9 +268,15 @@ padding: 1%;
 margin: 1%;
 display: flex;
 flex-direction: column; 
+flex-basis: 20%;
 font-size: 15px;
 text-align: center;
 text-decoration: bold;
+}
+@media screen and (max-width: 800px) {
+  .lower-card{
+    flex-basis: 80%;
+  }
 }
 
 .lower-card .comment
@@ -272,10 +290,18 @@ text-decoration: bold;
 font-size: 30px;
 color: orangered;
 }
+@media screen and (max-width: 800px) {
+  .lower-heading{
+    font-size:150%;
+  }
+  .lower-card .comment{
+    font-size:80%;
+  }
+}
 .lower-card img
 {
 margin: 1%;
-width: 350px;
+width: 100%;
 border: 2px solid black;
 }
 
@@ -291,7 +317,7 @@ color: red;
 }
 .contact
 {
-background-image: radial-gradient(white,lightsalmon);
+background-image: radial-gradient(white,lavender);
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 margin: 1%;
 padding: 1%;
@@ -303,7 +329,7 @@ align-items:center;
 {
 font-family: "Sofia";
 color: orangered;
-font-size: 50px;
+font-size: 200%;
 }
 
 .contact-content
@@ -314,13 +340,13 @@ text-align: center;
 
 .contact-content p
 {
-font-size: 20px;
+font-size: 100%;
 }
 
 .contact-content b
 {
 color: orangered;
-font-size: 20px;
+font-size: 100%;
 }
 
 .collapse {
@@ -383,3 +409,5 @@ color: orangered;
 {
 text-decoration: none;
 }
+
+
